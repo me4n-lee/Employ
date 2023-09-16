@@ -22,7 +22,6 @@ def fun():
     for i in range(m):
         ans = m_list[i]
 
-
         start = 0
         end = m+1
 
@@ -40,3 +39,12 @@ for i in range(m):
     print(result[i],end=" ")
 
 
+    ans = m_list[i]
+    start = 0 
+    end = m+1
+
+    while start <= end:
+        mid = (start + end) // 2
+
+        if n_list[mid] > ans:
+            
