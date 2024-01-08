@@ -2,12 +2,11 @@
 #합승 택시 요금
 
 
+#초기 문제 풀이 
+
 def solution(n, s, a, b, fares):
     answer = 0
-    
-    
     f = len(fares)
-    
     graph = [[] for _ in range(n+1)]
     
     for i in range(f):
@@ -36,9 +35,8 @@ def solution(n, s, a, b, fares):
         stack.append(start)
         
         while stack:
-            
+
             now = stack.pop()
-            # visit[now] = 1
             o = len(graph[now])
             
             for i in range(o):
@@ -60,7 +58,6 @@ def solution(n, s, a, b, fares):
     
         
     return answer
-
 
 #####
 
@@ -104,7 +101,3 @@ def solution(n, s, a, b, fares):
         answer = min(answer, distance_from_s[i] + distance_from_a[i] + distance_from_b[i])
 
     return answer
-
-# 테스트
-print(solution(6, 4, 6, 2, [[4, 1, 10], [3, 5, 24], [5, 6, 2], [3, 1, 41], [5, 1, 24], [4, 6, 50], [2, 4, 66], [2, 3, 22], [1, 6, 25]]))
-

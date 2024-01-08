@@ -5,7 +5,7 @@ def solution(n):
     answer = []
     
     def fun(n, start, to, end):
-        
+    
         if n == 1:
             answer.append([start, to])
         else:

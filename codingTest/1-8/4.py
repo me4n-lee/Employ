@@ -6,6 +6,7 @@ def solution(n, wires):
     w = len(wires)
     last = []
     
+    
     def dfs(start, graph, visit):
         
         stack = []
@@ -16,6 +17,7 @@ def solution(n, wires):
             
             now = stack.pop()
             g = len(graph[now])
+
             for i in range(g):
                 next = graph[now][i]
                 
@@ -25,8 +27,10 @@ def solution(n, wires):
                     stack.append(next)
         
         result = abs(cnt - (n-cnt))
+
         return result
     
+
     def fun(copy):
         
         c = len(copy)
@@ -40,15 +44,14 @@ def solution(n, wires):
         
         visit = [0] * (n+1)
         
-        
         for i in range(1,n+1):
             if visit[i] == 0:
                 visit[i] = 1
                 result = dfs(i, graph, visit)
-            
         
         return result
     
+
     for i in range(w):
         copy = list(wires)
         copy.remove(wires[i])
